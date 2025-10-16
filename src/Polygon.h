@@ -2,7 +2,7 @@
 #define POLYGON_H
 
 #include <initializer_list>
-#include <vector>
+#include <vector> // <-- will be included everywhere
 
 struct Point { float x, y; };
 
@@ -14,7 +14,7 @@ public:
     float area() const;
 
 private:
-    std::vector<Point> pts;
+    std::vector<Point> pts; // <-- details of implementation will be in client code
 };
 
 #endif // POLYGON_H
