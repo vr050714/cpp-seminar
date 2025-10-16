@@ -10,6 +10,7 @@ add_executable(poly2)
 target_sources(poly2
     PRIVATE
         src/main.cpp
+        src/Polygon.cpp
 )
 
 target_compile_options(poly2
