@@ -1,11 +1,25 @@
 #include "Polygon.h"
+#include <vector> // <-- no longer exposed to client code
 #include <cmath>
 
+struct Polygon::PolygonImpl {
+    explicit PolygonImpl(std::initializer_list<Point> points)
+        : pts{points}
+    {}
+
+    std::vector<Point> pts; // <-- details of implementation
+};
+
+
 Polygon::Polygon(std::initializer_list<Point> points)
-    : pts{points}
+    : impl{std::make_unique<PolygonImpl>(points)}
 {}
 
+Polygon::~Polygon() = default; // <-- has to be defined in this translation unit for unique_ptr
+
 float Polygon::circumfence() const {
+    const auto& pts = impl->pts;
+
     if (pts.size() < 2) {
         return 0.0f;
     }
@@ -28,6 +42,8 @@ float Polygon::circumfence() const {
 }
 
 float Polygon::area() const {
+    const auto& pts = impl->pts;
+
     if (pts.size() < 3) {
         return 0.0f;
     }
