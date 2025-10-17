@@ -10,16 +10,16 @@
 /// 3. We are going to distribute the library with python wrapper
 
 int main() {
-    Polygon a { {0, 0}, {1, 0}, {1, 1}, {0, 1} };
-    std::cout << "a.circumfence(): " << a.circumfence() << "\n";
+    Polygon a { {0, 0}, {1, 0}, {1, 2}, {0, 2} };
+    std::cout << "a.circumference(): " << a.circumference() << "\n";
     std::cout << "a.area(): " << a.area() << "\n";
 
     std::vector<Point> pts {
-        { 0, 0 }, { 1, 0 }, {2, 0}
+        { 0, 0 }, { 1, 0 }, {0, 1}
     };
 
     auto b = Polygon::from_collection(pts.begin(), pts.end());
-    std::cout << "b.circumfence(): " << b.circumfence() << "\n";
+    std::cout << "b.circumference(): " << b.circumference() << "\n";
     std::cout << "b.area(): " << b.area() << "\n";
 
     return 0;

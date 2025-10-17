@@ -23,6 +23,6 @@ cmake --install build
 ```python
 from pygeometry import Point, Polygon
 p = Polygon([Point(0, 0), Point(1, 0), Point(1, 1), Point(0, 1)])
-print(f"p.circumfence(): {p.circumfence()}")
+print(f"p.circumference(): {p.circumference()}")
 print(f"p.area(): {p.area()}")
 ```

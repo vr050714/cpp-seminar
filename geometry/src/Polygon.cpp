@@ -22,7 +22,7 @@ Polygon::Polygon(std::initializer_list<Point> points)
 
 Polygon::~Polygon() = default; // <-- has to be defined in this translation unit for unique_ptr
 
-float Polygon::circumfence() const {
+float Polygon::circumference() const {
     const auto& pts = impl->pts;
 
     if (pts.size() < 2) {

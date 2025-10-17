@@ -22,7 +22,7 @@ PYBIND11_MODULE(pygeometry, m) {
         .def(py::init([](std::vector<Point> points) {
             return Polygon::from_collection(points.begin(), points.end());
         }))
-        .def("circumfence", &Polygon::circumfence, "Calculate the circumference of the polygon")
+        .def("circumference", &Polygon::circumference, "Calculate the circumference of the polygon")
         .def("area", &Polygon::area, "Calculate the area of the polygon")
         .def("__repr__", [](const Polygon&) { return "<Polygon>"; });
 }

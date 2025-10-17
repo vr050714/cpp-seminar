@@ -30,7 +30,7 @@ public:
     Polygon& operator=(const Polygon&);
     ~Polygon();
 
-    float circumfence() const;
+    float circumference() const;
     float area() const;
 
 private:
