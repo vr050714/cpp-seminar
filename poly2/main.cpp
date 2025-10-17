@@ -3,11 +3,11 @@
 #include "Polygon.h"
 
 /// What if:
-/// 1. ~We are going to use ths class in different places, should it be compiled multiple times?~
+/// 1. We are going to use this class in different places, should it be compiled multiple times?
 /// 2. We are going to change implementation
 ///    - keep coordinates in two separate arrays for better performance
-///    - use Eigen library for vectorization
-/// 3. We are going to distribue the library with python wrapper
+///    - use an Eigen library for vectorization
+/// 3. We are going to distribute the library with python wrapper
 
 int main() {
     Polygon a { {0, 0}, {1, 0}, {1, 1}, {0, 1} };
