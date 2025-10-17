@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Polygon.h"
 
 /// What if:
@@ -12,5 +13,14 @@ int main() {
     Polygon a { {0, 0}, {1, 0}, {1, 1}, {0, 1} };
     std::cout << "a.circumfence(): " << a.circumfence() << "\n";
     std::cout << "a.area(): " << a.area() << "\n";
+
+    std::vector<Point> pts {
+        { 0, 0 }, { 1, 0 }, {2, 0}
+    };
+
+    auto b = Polygon::from_collection(pts.begin(), pts.end());
+    std::cout << "b.circumfence(): " << b.circumfence() << "\n";
+    std::cout << "b.area(): " << b.area() << "\n";
+
     return 0;
 }

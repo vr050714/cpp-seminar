@@ -1,8 +1,13 @@
 #include "Polygon.h"
 #include <vector> // <-- no longer exposed to client code
 #include <cmath>
+#include <algorithm>
 
 struct Polygon::PolygonImpl {
+    explicit PolygonImpl(std::vector<Point> points)
+        : pts{points}
+    {}
+
     explicit PolygonImpl(std::initializer_list<Point> points)
         : pts{points}
     {}
@@ -56,4 +61,20 @@ float Polygon::area() const {
     }
 
     return std::abs(sum) / 2.0f;
+}
+
+Polygon::Polygon(const Polygon& that)
+    :impl{std::make_unique<PolygonImpl>(that.impl->pts)}
+{}
+
+Polygon& Polygon::operator=(const Polygon& other) {
+    Polygon temp(other);  // Use copy constructor
+    std::swap(impl, temp.impl);
+    return *this;
+}
+
+Polygon::Polygon() : Polygon({}) {}
+
+void Polygon::add_point(const Point& pt) {
+    impl->pts.push_back(pt);
 }
