@@ -35,6 +35,7 @@
 - [cppiceberg](https://victorpoughon.github.io/cppiceberg/)
 - [C++ Standard Evolution Viewer](https://cppevo.dev/)
 - [C++ Compiler Support Status](https://cppstat.org/)
+- [awesome-cpp](https://github.com/fffaraz/awesome-cpp)
 
 ## Demonstrate PIMPL idiom
 
